@@ -6,17 +6,13 @@ Fixora is a React-based web application that enables citizens to report, track, 
 # 🚀 Features
 (1)🔐 User authentication (Citizen/Admin)
 (2)📝 Raise and manage complaints
-(3)📍 Location-based reporting (Map integration)
-(4)🖼️ Image upload for issue verification
-(5)🔄 Real-time status tracking
-(6)📊 Admin dashboard with analytics
-(7)🤖 AI-based issue categorization 
+(3)🖼️ Image upload for issue verification
+(4)🔄 Real-time status tracking
+(5)📊 Admin dashboard with analytics
+(6)🤖 AI-based issue categorization 
 
 # 🛠️ Tech Stack
 Frontend: React.js
-Backend: Node.js / Firebase
-Database: MongoDB / Firestore
-APIs: Google Maps API, WebSockets / Firebase
 
 # ⚙️ Installation & Setup
 Step 1 # Clone the repository
