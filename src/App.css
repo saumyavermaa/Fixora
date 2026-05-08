@@ -1,0 +1,715 @@
+/* ================= BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #0b1220);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* ================= PAGE ================= */
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ================= CONTENT ================= */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+
+  z-index: 1000;
+}
+
+.nav-left h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: 0.5px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar button {
+  padding: 9px 14px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+
+  color: #e5e7eb;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.navbar button:hover {
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-1px);
+}
+
+.logout {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ================= GRID ================= */
+.counter-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* ================= CARDS ================= */
+.card,
+.counter-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+
+  padding: 18px;
+  text-align: center;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card:hover,
+.counter-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+}
+
+/* ================= FEED ================= */
+.feed-card {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* ================= MAP ================= */
+.map-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.map {
+  width: 100%;
+  height: 420px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.login-wrapper {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle at top, #0b1220, #05070d);
+  overflow: hidden;
+}
+
+.login-wrapper::before,
+.login-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.login-wrapper::before {
+  background: #3b82f6;
+  top: -120px;
+  left: -120px;
+}
+
+.login-wrapper::after {
+  background: #a78bfa;
+  bottom: -120px;
+  right: -120px;
+}
+
+/* ================= LOGIN CARD ================= */
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  width: 400px;
+  padding: 36px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  text-align: center;
+}
+
+.login-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.login-header p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.role-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.role-switch button {
+  flex: 1;
+  padding: 10px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
+  color: #e5e7eb;
+
+  cursor: pointer;
+}
+
+.role-switch .active {
+  background: #60a5fa;
+  color: #0b1220;
+  font-weight: 600;
+}
+
+/* ================= INPUTS ================= */
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(0,0,0,0.3);
+  color: #e5e7eb;
+
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #60a5fa;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+
+  background: #f9fafb;
+  color: #111827;
+
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= FORM ================= */
+.form-card {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+  padding: 26px;
+}
+
+/* ================= UPLOAD ================= */
+.upload-box {
+  margin-top: 10px;
+  padding: 16px;
+
+  border-radius: 12px;
+  border: 1px dashed rgba(255,255,255,0.2);
+
+  text-align: center;
+}
+
+.preview img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* ================= PRIMARY BUTTON ================= */
+.primary-btn {
+  width: 100%;
+  margin-top: 18px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  color: #fff;
+
+  font-weight: 700;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= MOBILE FIX (IMPORTANT) ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .nav-center {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .login-card {
+    width: 92%;
+  }
+
+  .content {
+    padding: 90px 14px 30px;
+  }
+}
+
+/* ================= FLOATING BUTTON ================= */
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  background: #60a5fa;
+  color: #0b1220;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ACTIVE FILTER BUTTON */
+.active-filter {
+  background: #60a5fa;
+  color: #0b1220;
+  font-weight: 600;
+}
+
+/* better filter spacing */
+.nav-center {
+  margin: 10px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ================= ADMIN TABLE ================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.admin-table thead th {
+  text-align: left;
+  font-size: 13px;
+  opacity: 0.7;
+  padding: 10px;
+}
+
+.admin-table tbody tr {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+
+.admin-table tbody td {
+  padding: 14px 10px;
+  vertical-align: top;
+}
+
+.admin-table tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.admin-table tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* ================= BUTTONS ================= */
+
+.action-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.action-btns button {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= BADGES ================= */
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status-badge.Pending {
+  background: rgba(234,179,8,0.2);
+  color: #facc15;
+}
+
+.status-badge.Resolved {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.status-badge.Rejected {
+  background: rgba(239,68,68,0.2);
+  color: #ef4444;
+}
+
+.priority-badge.High {
+  color: #ef4444;
+}
+
+.priority-badge.Medium {
+  color: #facc15;
+}
+
+.priority-badge.Low {
+  color: #22c55e;
+}
+
+
+/* ================= RECENT ACTIVITY FIX (CLEAN FEED) ================= */
+
+.complaint-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+/* complaint card in feed */
+.complaint-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 16px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: all 0.25s ease;
+}
+
+.complaint-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* header layout */
+.mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* title */
+.mini-header h4 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* description */
+.desc {
+  font-size: 13px;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+/* badges wrapper */
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* status badge enhancement */
+.status {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  background: rgba(96,165,250,0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(96,165,250,0.3);
+}
+
+/* priority badge */
+.priority {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* priority colors */
+.priority.low {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+}
+
+.priority.medium {
+  background: rgba(245,158,11,0.15);
+  color: #facc15;
+}
+
+.priority.high {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+/* empty state better spacing */
+.feed-card p {
+  line-height: 1.5;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+  background: radial-gradient(circle at 20% 20%, rgba(96,165,250,0.15), transparent 40%),
+              radial-gradient(circle at 80% 30%, rgba(167,139,250,0.12), transparent 45%),
+              radial-gradient(circle at 50% 80%, rgba(34,197,94,0.08), transparent 50%);
+  
+  animation: bgMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+  0% {
+    transform: translateY(0px) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translateY(-20px) scale(1.05);
+    filter: hue-rotate(20deg);
+  }
+}
+
+/* ================= FLOATING ORBS ================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 2px, transparent 2px);
+  background-size: 60px 60px;
+
+  animation: floatDots 20s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes floatDots {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-60px);
+  }
+}
+
+/* ================= CARD GLOW PULSE ================= */
+
+.card, .feed-card, .complaint-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before, 
+.feed-card::before,
+.complaint-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(96,165,250,0.12), transparent 60%);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card:hover::before,
+.feed-card:hover::before,
+.complaint-card:hover::before {
+  opacity: 1;
+}
+
+/* ================= HERO GLOW ANIMATION ================= */
+
+.hero h1 {
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 10px rgba(96,165,250,0.2);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(167,139,250,0.5);
+  }
+}
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  /* FIX: ensures FAB / cards never hide behind navbar */
+  padding: 110px 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.login-logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
